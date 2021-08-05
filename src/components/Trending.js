@@ -10,13 +10,13 @@ import { Link } from 'react-router-dom';
 const Trending = () => {
     const [trendingMovie, setTrendingMovie] = useState([])
 
-    const {setData} = useData()
+    const { setData } = useData()
 
     const getOriginalMovie = async () => {
         const response = await axios.get(AllMoviesData.trending)
         const result = await response.data.results
 
-        console.log(response)
+        // console.log(response)
         setTrendingMovie(result)
     }
 
@@ -31,7 +31,7 @@ const Trending = () => {
                 <h2>TRENDING SERIES</h2>
                 <div className="movie-data-div">
                     {
-                        trendingMovie.map((item) => <Link to="/movie-detail" ><img onClick={()=>setData(item)} key={item.id} src={`https://image.tmdb.org/t/p/original/${item?.poster_path}`} alt="not found" className="original-img" /> </Link>)
+                        trendingMovie.map((item) => <Link to="/movie-detail" key={item.id} ><img onClick={() => setData(item)} src={`https://image.tmdb.org/t/p/original/${item?.poster_path}`} alt="not found" className="original-img" /> </Link>)
                     }
 
                 </div>

@@ -9,7 +9,7 @@ import { useData } from '../context_reducer/Context';
 const HomePage = () => {
     const [originalMovie, setOriginalMovie] = useState([])
 
-    const {setData} = useData()
+    const { setData } = useData()
 
 
     const getOriginalMovie = async () => {
@@ -30,7 +30,7 @@ const HomePage = () => {
                 <h2>NETFLIX ORIGINAL SERIES</h2>
                 <div className="movie-data-div">
                     {
-                        originalMovie.map((item) => <Link to="/movie-detail"> <img onClick={()=>setData(item)} key={item.id} src={`https://image.tmdb.org/t/p/original/${item?.poster_path}`} alt="not found" className="original-img" /> </Link>)
+                        originalMovie.map((item) => <Link to="/movie-detail" key={item.id}> <img onClick={() => setData(item)} src={`https://image.tmdb.org/t/p/original/${item?.poster_path}`} alt="not found" className="original-img" /> </Link>)
                     }
 
                 </div>

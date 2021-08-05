@@ -10,7 +10,7 @@ import { Link } from 'react-router-dom';
 const WebSeries = () => {
     const [webSeries, setWebSeries] = useState([])
 
-    const {setData} = useData()
+    const { setData } = useData()
 
     const getOriginalMovie = async () => {
         const response = await axios.get(AllMoviesData.Web_series)
@@ -31,7 +31,7 @@ const WebSeries = () => {
                 <h2>WEB SERIES</h2>
                 <div className="movie-data-div">
                     {
-                        webSeries.map((item) => <Link to="/movie-detail"> <img onClick={()=>setData(item)} key={item.id} src={`https://image.tmdb.org/t/p/original/${item?.poster_path}`} alt="not found" className="original-img" /> </Link>)
+                        webSeries.map((item) => <Link to="/movie-detail" key={item.id}> <img onClick={() => setData(item)} src={`https://image.tmdb.org/t/p/original/${item?.poster_path}`} alt="not found" className="original-img" /> </Link>)
                     }
 
                 </div>
