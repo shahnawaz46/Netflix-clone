@@ -1,6 +1,6 @@
 ## to visit project click on below link
 
-The app is deployed using Firebase at : https://netflix-clone-b6b90.firebaseapp.com/
+The app is deployed using Firebase at : https://netflix-clone-b3dd4.web.app/
 
 
 # Getting Started with Create React App
